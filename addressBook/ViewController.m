@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.searchBar.delegate = self;
+
     
     self.abManager = [[ABManager alloc] init];
 
@@ -162,65 +162,6 @@
 
 
 
-#pragma mark - UISearchBarDelegate
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    [searchBar setShowsCancelButton:YES animated:YES];
-}
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar {
-    
-    [searchBar resignFirstResponder];
-    [searchBar setShowsCancelButton:NO animated:YES];
-    
-}
-
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    
-    NSLog(@"textDidChange %@", searchText);
-    
-//    self.sectionsArray = [self generateSectionsFromArray:self.personsArray withFilter:searchText];
-//    [self.tableView reloadData];
-    
-//    [self generateSectionsInBackgroundFromArray:self.namesArray withFilter:self.searchBar.text];
-    
-}
-
-#pragma mark - generator
-
-- (NSMutableArray*) generateSectionsFromArray:(NSArray*) array withFilter:(NSString*) filterString {
-
-    NSMutableArray* sectionsArray = [NSMutableArray array];
-
-    NSString* currentLetter = nil;
-
-    for (Person* person in array) {
-        NSString* fullName = [NSString stringWithFormat:@"%@ %@", person.firstName, person.lastName];
-        
-        if ([filterString length] > 0 && [fullName rangeOfString:filterString].location == NSNotFound) {
-            continue;
-        }
-        
-        NSString* firstLetter = [person.firstName substringToIndex:1];
-        
-        Section* section = nil;
-        
-        if (![currentLetter isEqualToString:firstLetter]) {
-            section = [[Section alloc] init];
-            section.sectionName = firstLetter;
-            section.itemsArray = [NSMutableArray array];
-            currentLetter = firstLetter;
-            [sectionsArray addObject:section];
-        } else {
-            section = [sectionsArray lastObject];
-        }
-
-        [section.itemsArray addObject:fullName];
-
-    }
-
-    return sectionsArray;
-}
 
 
 

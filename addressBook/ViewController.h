@@ -11,14 +11,14 @@
 #import "ContactsTableView.h"
 @class CDWriter;
 
-@interface ViewController : UIViewController <UISearchBarDelegate>
+@interface ViewController : UIViewController
 
 @property (strong, nonatomic) NSMutableArray* personsArray;
 @property (weak, nonatomic) IBOutlet ContactsTableView *tableView;
 @property (strong, nonatomic) ABManager* abManager;
 @property (strong, nonatomic) CDWriter* cdWriter;
 
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 
 
 
