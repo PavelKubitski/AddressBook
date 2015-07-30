@@ -27,48 +27,7 @@ NSString* const ABManagerCanReadAfterPermisionAddressBookInfoKey = @"ABManagerCa
 BOOL isUpdated = NO;
 
 
-//void addressBookChanged(ABAddressBookRef addressBook, CFDictionaryRef info, void  *context)
-//{
-////        NSLog(@"addressBookChanged");
-//    NSMutableArray* oldPersons = [[NSMutableArray alloc] initWithArray:[((__bridge ABManager*) context) arrayOfPersons]];
-//    [((__bridge ABManager*) context) fillPersonsArray];
-//    NSMutableArray* updatePersons = [[NSMutableArray alloc] initWithArray:[((__bridge ABManager*) context) arrayOfPersons]];
-//    NSInteger start = [oldPersons count] ;
-//    NSInteger end = [updatePersons count] ;
-//    
-//    NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] init];
-//    NSArray* newPersons;
-//
-//
-//    if ([oldPersons count] < [updatePersons count]) {
-//        [dictionary setObject:@"Append" forKey:ABManagerKindOfChangeInfoKey];
-//        newPersons = [updatePersons subarrayWithRange:NSMakeRange(start, end - start)];
-////        if (isUpdated == YES) {
-////            isUpdated = NO;
-////        }
-//
-////    } else if ([oldPersons count] == [updatePersons count]) {
-////        [dictionary setObject:@"Update" forKey:ABManagerKindOfChangeInfoKey];
-////    } else if([updatePersons count] == 0) {
-////        [dictionary setObject:@"Delete all" forKey:ABManagerKindOfChangeInfoKey];
-////    } else {
-////        [dictionary setObject:@"Delete" forKey:ABManagerKindOfChangeInfoKey];
-////    }
-//
-//    if (newPersons) {
-//        [dictionary setObject:newPersons forKey:ABManagerDidChangeAddressBookInfoKey];
-//    }
-//    
-//    if (isUpdated == NO) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:ABManagerDidChangeAddressBookNotification
-//                                                            object:nil
-//                                                          userInfo:dictionary];
-//    }
-//        if (isUpdated == YES) {
-//            isUpdated = NO;
-//        }
-//    }
-//}
+
 
 
 @implementation ABManager

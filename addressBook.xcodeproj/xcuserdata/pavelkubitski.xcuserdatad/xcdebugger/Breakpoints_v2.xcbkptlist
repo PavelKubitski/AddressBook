@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ABManager.m"
-            timestampString = "459941213.275972"
+            timestampString = "459968507.822319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-canReadAfterPermision"
             landmarkType = "5">
          </BreakpointContent>
@@ -586,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ABManager.m"
-            timestampString = "459941213.275972"
+            timestampString = "459968507.822319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "-fillPersonsArray"
             landmarkType = "5">
          </BreakpointContent>
@@ -602,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ABManager.m"
-            timestampString = "459941213.275972"
+            timestampString = "459968507.822319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "329"
-            endingLineNumber = "329"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "-updateAdressBookPerson:withPerson:"
             landmarkType = "5">
          </BreakpointContent>
@@ -618,11 +618,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ABManager.m"
-            timestampString = "459941213.275972"
+            timestampString = "459968507.822319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "-fillPersonsArray"
             landmarkType = "5">
          </BreakpointContent>
@@ -826,11 +826,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ABManager.m"
-            timestampString = "459941213.275972"
+            timestampString = "459968507.822319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "-updateAdressBookPerson:withPerson:"
             landmarkType = "5">
          </BreakpointContent>
@@ -842,11 +842,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ABManager.m"
-            timestampString = "459941213.275972"
+            timestampString = "459968507.822319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "358"
-            endingLineNumber = "358"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
             landmarkName = "-updateAdressBookPerson:withPerson:"
             landmarkType = "5">
          </BreakpointContent>
@@ -858,11 +858,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ABManager.m"
-            timestampString = "459941213.275972"
+            timestampString = "459968507.822319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "-updateAdressBookPerson:withPerson:"
             landmarkType = "5">
          </BreakpointContent>
