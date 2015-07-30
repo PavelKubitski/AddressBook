@@ -93,7 +93,7 @@
 
 - (void)changeHomeLocation:(UIGestureRecognizer *)gestureRecognizer {
 
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         if (self.vc == EDITVIEWCONTROLLER) {
 
             CGPoint touchPoint = [gestureRecognizer locationInView:self.map];
