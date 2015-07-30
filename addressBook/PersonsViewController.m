@@ -6,18 +6,18 @@
 //  Copyright (c) 2015 Pavel Kubitski. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "PersonsViewController.h"
 #import "DetailViewController.h"
 #import "EditInfoViewController.h"
 #import "Section.h"
 #import "ContactsTableView.h"
 #import "CDWriter.h"
 
-@interface ViewController ()
+@interface PersonsViewController ()
 
 @end
 
-@implementation ViewController
+@implementation PersonsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -131,7 +131,7 @@
     
     [self.navigationController pushViewController:vc animated:YES];
     [self.abManager allPersonsAddPerson:YES];
-    [vc initWithPerson:person fromVC:VIEWCONTROLLER];
+    [vc initWithPerson:person fromVC:PERSONSVIEWCONTROLLER];
 }
 
 

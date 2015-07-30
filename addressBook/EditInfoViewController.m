@@ -10,7 +10,7 @@
 #import "EditCell.h"
 #import "DetailViewController.h"
 #import "TypeViewController.h"
-#import "ViewController.h"
+
 #import "LabelAndInfo.h"
 #import "MapViewController.h"
 #import "CustomAnnotation.h"
@@ -162,7 +162,7 @@ NSString* const IndexOfPersonInArrayInfoKey = @"IndexOfPersonInArrayInfoKey";
     [self saveChangesOfProfile];
 
 
-    if (self.vc == VIEWCONTROLLER) {
+    if (self.vc == PERSONSVIEWCONTROLLER) {
         if ([self.personWithChanges.firstName isEqualToString:@""] &&
             [self.personWithChanges.lastName isEqualToString:@""]) {
             self.personWithChanges.firstName = @"No name";
@@ -188,7 +188,7 @@ NSString* const IndexOfPersonInArrayInfoKey = @"IndexOfPersonInArrayInfoKey";
 - (void)actionCancelButtonPressed:(id)sender {
     [[[CDManager sharedManager] managedObjectContext] deleteObject:self.personWithChanges];
     
-    if (self.vc == VIEWCONTROLLER) {
+    if (self.vc == PERSONSVIEWCONTROLLER) {
 
         [[[CDManager sharedManager] managedObjectContext] deleteObject:self.oldPerson];
     } else if (self.vc == DETAILVIEWCONTROLLER) {

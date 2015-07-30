@@ -11,7 +11,6 @@
 #import "EditInfoViewController.h"
 #import "LabelAndInfo.h"
 #import "CustomAnnotation.h"
-#import "ViewController.h"
 #import "UIViewController+LastViewController.h"
 #import "NSArray+Converter.h"
 #import "CDCoordinate.h"

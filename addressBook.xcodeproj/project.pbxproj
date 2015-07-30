@@ -10,7 +10,7 @@
 		574657A21B32D775009BC47E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574657A11B32D775009BC47E /* DetailViewController.m */; };
 		574847441B2F549900162F1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 574847431B2F549900162F1D /* main.m */; };
 		574847471B2F549900162F1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 574847461B2F549900162F1D /* AppDelegate.m */; };
-		5748474A1B2F549900162F1D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574847491B2F549900162F1D /* ViewController.m */; };
+		5748474A1B2F549900162F1D /* PersonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574847491B2F549900162F1D /* PersonsViewController.m */; };
 		5748474D1B2F549900162F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5748474B1B2F549900162F1D /* Main.storyboard */; };
 		5748474F1B2F549900162F1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5748474E1B2F549900162F1D /* Images.xcassets */; };
 		574847521B2F549900162F1D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 574847501B2F549900162F1D /* LaunchScreen.xib */; };
@@ -65,8 +65,8 @@
 		574847431B2F549900162F1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		574847451B2F549900162F1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		574847461B2F549900162F1D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		574847481B2F549900162F1D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		574847491B2F549900162F1D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		574847481B2F549900162F1D /* PersonsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonsViewController.h; sourceTree = "<group>"; };
+		574847491B2F549900162F1D /* PersonsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonsViewController.m; sourceTree = "<group>"; };
 		5748474C1B2F549900162F1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5748474E1B2F549900162F1D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		574847511B2F549900162F1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -459,8 +459,8 @@
 		57AAED441B318AA900BC4F63 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				574847481B2F549900162F1D /* ViewController.h */,
-				574847491B2F549900162F1D /* ViewController.m */,
+				574847481B2F549900162F1D /* PersonsViewController.h */,
+				574847491B2F549900162F1D /* PersonsViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -613,7 +613,7 @@
 				579CD9B51B4F184300B6294A /* CustomMapView.m in Sources */,
 				57A04A4C1B602A5600D1ED04 /* NSManagedObject+Clone.m in Sources */,
 				574847691B2F54E000162F1D /* ABManager.m in Sources */,
-				5748474A1B2F549900162F1D /* ViewController.m in Sources */,
+				5748474A1B2F549900162F1D /* PersonsViewController.m in Sources */,
 				579D60CB1B551D480048F3C0 /* AddressBookModel.xcdatamodeld in Sources */,
 				579E3D751B5BDF4D00589C5B /* NSString+PhoneNumber.m in Sources */,
 				57E0558D1B4AD30D005F4D70 /* LabelAndInfo.m in Sources */,

@@ -11,7 +11,7 @@
 #import "CustomMapView.h"
 @class CDPerson;
 
-enum viewControllers {VIEWCONTROLLER, DETAILVIEWCONTROLLER, EDITVIEWCONTROLLER};
+enum viewControllers {PERSONSVIEWCONTROLLER, DETAILVIEWCONTROLLER, EDITVIEWCONTROLLER};
 
 @interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet CustomMapView *map;

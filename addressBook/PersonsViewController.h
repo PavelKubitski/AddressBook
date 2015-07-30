@@ -11,7 +11,7 @@
 #import "ContactsTableView.h"
 @class CDWriter;
 
-@interface ViewController : UIViewController
+@interface PersonsViewController : UIViewController
 
 @property (strong, nonatomic) NSMutableArray* personsArray;
 @property (weak, nonatomic) IBOutlet ContactsTableView *tableView;

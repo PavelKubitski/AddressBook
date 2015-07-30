@@ -23,7 +23,7 @@
         <!--Contacts-->
         <scene sceneID="fdg-QS-NLQ">
             <objects>
-                <viewController id="tPz-iT-bhT" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="tPz-iT-bhT" customClass="PersonsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eko-b0-YL7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
