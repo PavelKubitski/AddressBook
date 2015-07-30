@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CDCoordinate" representedClassName="CDCoordinate" parentEntity="CDObject" syncable="YES">
+        <attribute name="fullAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="nameOfLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subTitleOfLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPerson" inverseName="coordinate" inverseEntity="CDPerson" syncable="YES"/>
+    </entity>
+    <entity name="CDEmail" representedClassName="CDEmail" parentEntity="CDObject" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeLabel" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPerson" inverseName="email" inverseEntity="CDPerson" syncable="YES"/>
+    </entity>
+    <entity name="CDObject" representedClassName="CDObject" isAbstract="YES" syncable="YES"/>
+    <entity name="CDPerson" representedClassName="CDPerson" parentEntity="CDObject" syncable="YES">
+        <attribute name="avatarImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="coordinate" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDCoordinate" inverseName="person" inverseEntity="CDCoordinate" syncable="YES"/>
+        <relationship name="email" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDEmail" inverseName="person" inverseEntity="CDEmail" syncable="YES"/>
+        <relationship name="phoneNumber" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDPhoneNumber" inverseName="person" inverseEntity="CDPhoneNumber" syncable="YES"/>
+    </entity>
+    <entity name="CDPhoneNumber" representedClassName="CDPhoneNumber" parentEntity="CDObject" syncable="YES">
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeLabel" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPerson" inverseName="phoneNumber" inverseEntity="CDPerson" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDEmail" positionX="-3161" positionY="1485" width="128" height="88"/>
+        <element name="CDObject" positionX="-3267" positionY="1359" width="128" height="43"/>
+        <element name="CDPerson" positionX="-3411" positionY="1476" width="128" height="148"/>
+        <element name="CDPhoneNumber" positionX="-3584" positionY="1458" width="128" height="88"/>
+        <element name="CDCoordinate" positionX="-3314" positionY="1700" width="128" height="133"/>
+    </elements>
+</model>

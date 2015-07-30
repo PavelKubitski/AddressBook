@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[MapViewController initWithPerson:fromVC:]:MapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.map.annotations">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CustomMapView geoCodeUsingAddress:]:CustomMapView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[DetailViewController adjastHieghtOfTableView]:DetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.homeMapView.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[EditInfoViewController saveChangesOfProfile]:EditInfoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.person.emails">
+            </PersistentString>
+            <PersistentString
+               value = "self.person.numbers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewController handleLongPress:]:MapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.map.annotations">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController tableView:didSelectRowAtIndexPath:]:ViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ABManager fillPersonsArray]:ABManager.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "person.birthdayDate">
+            </PersistentString>
+            <PersistentString
+               value = "fnameProperty">
+            </PersistentString>
+            <PersistentString
+               value = "person.address">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetailViewController editButtonAction:]:DetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditCell textFieldDidEndEditing:]:EditCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "textField.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController refreshButtonAction:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.abManager.arrayOfPersons">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[EditContactTableView reventChanges:]:EditContactTableView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.fetchedResultsController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "addressBookChanged:ABManager.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[oldPersons count]">
+            </PersistentString>
+            <PersistentString
+               value = "isUpdated">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewController viewWillAppear:]:MapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.map.annotations">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__60-[MapViewController getAddressFromCoordinates:andLongitude:]_block_invoke:MapViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditContactTableView textFieldDidEndEditing:]:EditContactTableView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "managedObj.number">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CDWriter deleteAllObjects]:CDWriter.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController updateTableView]:ViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewContactTableView numberFetchedResultsController]:ViewContactTableView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[DetailViewController viewWillAppear:]:DetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "i">
+            </PersistentString>
+            <PersistentString
+               value = "self.pers.image">
+            </PersistentString>
+            <PersistentString
+               value = "self.nameLabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[EditInfoViewController actionCancelButtonPressed:]:EditInfoViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditInfoViewController viewDidLoad]:EditInfoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.person.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__37-[CustomMapView geoCodeUsingAddress:]_block_invoke:CustomMapView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditContactTableView changedCharactare:]:EditContactTableView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[CustomAnnotation initWithCDCoordinate:]:CustomAnnotation.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "coordinate.nameOfLocation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[EditContactTableView configureCell:atIndexPath:]:EditContactTableView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.typeLabel.text ">
+            </PersistentString>
+            <PersistentString
+               value = "cdPhoneNumber.typeLabel">
+            </PersistentString>
+            <PersistentString
+               value = "cell.infoTextField.text">
+            </PersistentString>
+            <PersistentString
+               value = "cdPhoneNumber.number">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewController addAnnotationToPerson:]:MapViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditContactTableView controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:]:EditContactTableView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.section">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[EditContactTableView reventChangesCDPerson:withPerson:]:EditContactTableView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cdPers.email">
+            </PersistentString>
+            <PersistentString
+               value = "cdPers.phoneNumber">
+            </PersistentString>
+            <PersistentString
+               value = "cdPers.firstName">
+            </PersistentString>
+            <PersistentString
+               value = "cdPerson.phoneNumber">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[EditContactTableView reventChangesInCDPersonWithPerson:]:EditContactTableView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.cdPerson.email">
+            </PersistentString>
+            <PersistentString
+               value = "self.cdPerson.phoneNumber">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetailViewController mapViewTouched:]:DetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.cdPerson.coordinate">
+            </PersistentString>
+            <PersistentString
+               value = "c.nameOfLocation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetailViewController viewDidLoad]:DetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[CustomMapView addAnnotationToPerson:]:CustomMapView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewContactTableView emailFetchedResultsController]:ViewContactTableView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditInfoViewController actionDoneButtonPressed:]:EditInfoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.oldPerson.firstName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[EditInfoViewController tableView:cellForRowAtIndexPath:]:EditInfoViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewContactTableView tableView:numberOfRowsInSection:]:ViewContactTableView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditCell textField:shouldChangeCharactersInRange:replacementString:]:EditCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditEmailsCell keyboardWasShown:]:EditEmailsCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.superview">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[EditCell textFieldDidBeginEditing:]:EditCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditInfoViewController keyboardWasShown:]:EditInfoViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditContactTableView changeTypeLabel:withLabel:atIndexPath:]:EditContactTableView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "managedObj.typeLabel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewContactTableView reloadDataOfCustomTable]:ViewContactTableView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController viewDidLoad]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.personsArray[0].emails">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewContactTableView configureCell:atIndexPath:]:ViewContactTableView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.typeLabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[EditInfoViewController typeVCDismissed:]:EditInfoViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditCell initIndexpathOfSelectCell]:EditCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditContactTableView awakeFromNib]:EditContactTableView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ABManager updateAdressBookPerson:withPerson:]:ABManager.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "person.lastName">
+            </PersistentString>
+            <PersistentString
+               value = "person.firstName">
+            </PersistentString>
+            <PersistentString
+               value = "pers">
+            </PersistentString>
+            <PersistentString
+               value = "newPers.coordinate">
+            </PersistentString>
+            <PersistentString
+               value = "newPers.firstName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[EditInfoViewController initWithPerson:fromVC:]:EditInfoViewController.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
