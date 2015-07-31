@@ -28,10 +28,6 @@ NSString* const ABManagerKindOfChangeInfoKey = @"ABManagerKindOfChangeInfoKey";
 NSString* const ABManagerCanReadAfterPermisionAddressBookInfoKey = @"ABManagerCanReadAfterPermisionAddressBookInfoKey";
 
 
-BOOL isUpdated = NO;
-
-
-
 
 
 @implementation ABManager
@@ -240,7 +236,7 @@ BOOL isUpdated = NO;
     if(result == YES) {
         BOOL save = ABAddressBookSave(self.addressBook, NULL); //save address book state
         if(save == YES && person != NULL) {
-            CFRelease(person);
+            NSLog(@"OK");
         } else {
             NSLog(@"Couldn't save, breaking out");
         }
