@@ -14,12 +14,10 @@
 
 @property (strong, nonatomic) CDManager* cdManager;
 
-+ (CDWriter*) sharedManager;
++ (CDWriter*) sharedWriter;
 
 - (void) addPersonsToCDBase:(NSArray*) persons;
 - (NSArray*) allObjects;
 - (void) deleteAllObjects;
-//- (NSArray*) convertCDSetToLaIArray:(NSSet*) set;
-
 
 @end

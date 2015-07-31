@@ -22,12 +22,12 @@
 {
     self = [super init];
     if (self) {
-        self.cdManager = [CDManager sharedManager];
+//        self.cdManager = [CDManager sharedManager];
     }
     return self;
 }
 
-+ (CDWriter*) sharedManager {
++ (CDWriter*) sharedWriter {
     
     static CDWriter* manager = nil;
     

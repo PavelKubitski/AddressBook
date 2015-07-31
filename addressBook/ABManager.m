@@ -16,6 +16,10 @@
 #import "NSString+PhoneNumber.h"
 
 
+
+
+
+
 NSString* const ABManagerDidChangeAddressBookNotification = @"ABManagerDidChangeAddressBookNotification";
 NSString* const ABManagerCanReadAfterPermisionAddressBookNotification = @"ABManagerCanReadAfterPermisionAddressBookNotification";
 
@@ -37,24 +41,40 @@ BOOL isUpdated = NO;
 - (instancetype)init
 {
     self = [super init];
+    
     if (self) {
         self.arrayOfPersons = [[NSMutableArray alloc] init];
         CFErrorRef error = NULL;
         self.addressBook = ABAddressBookCreateWithOptions(NULL, &error);
-
+        if (error) {
+            CFRelease(error);
+        }
     }
     return self;
 }
 
++ (ABManager*) sharedBook {
+    
+
+    static ABManager* abManager = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        abManager = [[ABManager alloc] init];
+    });
+    
+    return abManager;
+}
+
 - (void)dealloc
 {
-    CFRelease(self.addressBook);
+    if (self.addressBook) {
+        CFRelease(self.addressBook);
+    }
 }
 
 - (NSMutableArray *) allPersonsAddPerson:(BOOL) addPerson
 {
-
-    
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusDenied ||
         ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusRestricted){
         UIAlertView *cantAddContactAlert = [[UIAlertView alloc] initWithTitle: @"Cannot Add Contact" message: @"You must give the app permission to add the contact first." delegate:nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
@@ -112,8 +132,10 @@ BOOL isUpdated = NO;
     [self.arrayOfPersons removeAllObjects];
 
     CFArrayRef allContacts = ABAddressBookCopyArrayOfAllPeople(self.addressBook);
-    CFIndex numberOfContacts  = ABAddressBookGetPersonCount(self.addressBook);
 
+    CFIndex numberOfContacts  = ABAddressBookGetPersonCount(self.addressBook);
+    NSArray *emailArray;
+    NSArray *phoneArray;
     
     for(int i = 0; i < numberOfContacts; i++){
         Person* person = [[Person alloc] init];
@@ -127,26 +149,36 @@ BOOL isUpdated = NO;
         
         ABMultiValueRef phoneProperty = ABRecordCopyValue(aPerson, kABPersonPhoneProperty);
         ABMultiValueRef emailProperty = ABRecordCopyValue(aPerson, kABPersonEmailProperty);
-        
-        NSArray *emailArray = (__bridge_transfer NSArray *)ABMultiValueCopyArrayOfAllValues(emailProperty);
-        NSArray *phoneArray = (__bridge_transfer NSArray *)ABMultiValueCopyArrayOfAllValues(phoneProperty);
-
-        
-        
-        UIImage *img = [UIImage imageWithData:(__bridge NSData *)ABPersonCopyImageData(aPerson)];
+        if (emailProperty) {
+            emailArray = (__bridge_transfer NSArray *)ABMultiValueCopyArrayOfAllValues(emailProperty);
+            CFRelease(emailProperty);
+        }
+        if (phoneProperty) {
+            phoneArray = (__bridge_transfer NSArray *)ABMultiValueCopyArrayOfAllValues(phoneProperty);
+            CFRelease(phoneProperty);
+        }
+        CFDataRef cfImage = ABPersonCopyImageData(aPerson);
+        UIImage *img = [UIImage imageWithData:(__bridge NSData *)cfImage];
+        if (cfImage) {
+            CFRelease(cfImage);
+        }
         person.image = img;
 
         if (fnameProperty != nil) {
             person.firstName = [NSString stringWithFormat:@"%@", fnameProperty];
+            CFRelease(fnameProperty);
         }
         if (lnameProperty != nil) {
             person.lastName = [NSString stringWithFormat:@"%@", lnameProperty];
+            CFRelease(lnameProperty);
         }
         if (companyProperty != nil) {
             person.companyName = [NSString stringWithFormat:@"%@", companyProperty];
+            CFRelease(companyProperty);
         }
         if (birthdayProperty != nil) {
             person.birthdayDate = [NSString stringWithFormat:@"%@", birthdayProperty];
+            CFRelease(birthdayProperty);
         }
         if (addressProperty != nil) {
             if (ABMultiValueGetCount(addressProperty) > 0) {
@@ -160,7 +192,9 @@ BOOL isUpdated = NO;
                 NSString* countryCode = CFDictionaryGetValue(dict, kABPersonAddressCountryCodeKey);
                     if(!countryCode) countryCode = @"";
                 person.address = [NSString stringWithFormat:@"str.-%@_city.-%@_country.-%@_countryCode.-%@", street, city, country, countryCode];
+                CFRelease(dict);
             }
+            CFRelease(addressProperty);
         }
 
 
@@ -171,6 +205,7 @@ BOOL isUpdated = NO;
             email.label = (__bridge_transfer NSString*) ABAddressBookCopyLocalizedLabel(locLabel);
             
             [person.emails addObject:email];
+            CFRelease(locLabel);
         }
         
         for (int i = 0; i < [phoneArray count]; i++) {
@@ -180,9 +215,15 @@ BOOL isUpdated = NO;
             number.label = (__bridge_transfer NSString*) ABAddressBookCopyLocalizedLabel(locLabel);
             
             [person.numbers addObject:number];
+            CFRelease(locLabel);
         }
         [self.arrayOfPersons addObject:person];
+        if (aPerson) {
+            CFRelease(aPerson);
+        }
+
     }
+
 
 }
 
@@ -206,6 +247,7 @@ BOOL isUpdated = NO;
     } else {
         NSLog(@"Couldn't delete, breaking out");
     }
+
 }
 
 - (ABRecordRef) findPerson:(CDPerson*) person {
@@ -231,7 +273,21 @@ BOOL isUpdated = NO;
             break;
         }
         pers = nil;
+        if (fnameProperty) {
+            CFRelease(fnameProperty);
+        }
+        if (lnameProperty) {
+            CFRelease(lnameProperty);
+        }
     }
+    if (allPeople) {
+        CFRelease(allPeople);
+    }
+    if (error) {
+        CFRelease(error);
+    }
+
+    
     return pers;
 }
 
@@ -242,7 +298,6 @@ BOOL isUpdated = NO;
 - (void) updateAdressBookPerson:(CDPerson*) person withPerson:(CDPerson*) newPers{
         CFErrorRef *error = NULL;
         ABMultiValueIdentifier identifier;
-//        isUpdated = YES;
         ABRecordRef pers = nil;
         CFStringRef keys[4];
         CFStringRef values[4];
@@ -282,6 +337,7 @@ BOOL isUpdated = NO;
                 }
                 CFDictionaryRef dict = CFDictionaryCreate(NULL, (const void **)keys, (const void **)values, 4, &kCFCopyStringDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
                 ABMultiValueAddValueAndLabel(address, dict, kABHomeLabel, &identifier);
+                CFRelease(dict);
             }
 
             
@@ -305,21 +361,31 @@ BOOL isUpdated = NO;
             if (!person) {
                 ABAddressBookAddRecord(self.addressBook, pers, error);
             }
-            CFRelease(multiPhone);
-            CFRelease(multiEmails);
-            CFRelease(address);
+            if (multiEmails) {
+                CFRelease(multiEmails);
+            }
+            if (multiPhone) {
+                CFRelease(multiPhone);
+            }
+            if (address) {
+                CFRelease(address);
+            }
     
             ABAddressBookSave(self.addressBook, error);
-            CFRelease(pers);
-    
-    
+
         }
+
+
+
+    
         if (error != NULL)
         {
             CFStringRef errorDesc = CFErrorCopyDescription(*error);
             NSLog(@"Contact not saved: %@", errorDesc);
             CFRelease(errorDesc);
+            CFRelease(error);
         }
+    
 }
 
 

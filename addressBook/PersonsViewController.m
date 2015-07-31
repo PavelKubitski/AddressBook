@@ -13,6 +13,7 @@
 #import "ContactsTableView.h"
 #import "CDWriter.h"
 
+
 @interface PersonsViewController ()
 
 @end
@@ -24,10 +25,10 @@
 
 
     
-    self.abManager = [[ABManager alloc] init];
+    self.abManager = [ABManager sharedBook];
 
 
-    self.cdWriter = [CDWriter sharedManager];
+    self.cdWriter = [CDWriter sharedWriter];
 
 
     self.tableView.navigationController = self.navigationController;
@@ -110,7 +111,7 @@
 
 - (void) refreshButtonAction:(UIBarButtonItem*) sender {
     
-    self.abManager = [[ABManager alloc] init];
+//    self.abManager = [[ABManager alloc] init];
     [self.cdWriter deleteAllObjects];
     self.personsArray = [NSMutableArray arrayWithArray:[self.abManager allPersonsAddPerson:NO]];
     [self.cdWriter addPersonsToCDBase:self.personsArray];

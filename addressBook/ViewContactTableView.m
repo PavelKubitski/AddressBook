@@ -142,11 +142,11 @@
 {
     if (section == 0) {
         NSInteger i = [[[self.numberFetchedResultsController sections] objectAtIndex:0] numberOfObjects];
-        NSLog(@"numberOfRowsInSection %ld %ld",section, (long)i);
+        NSLog(@"numberOfRowsInSection %ld %ld",(long)section, (long)i);
         return [[[self.numberFetchedResultsController sections] objectAtIndex:0] numberOfObjects];
     } else if (section == 1) {
         NSInteger i = [[[self.emailFetchedResultsController sections] objectAtIndex:0] numberOfObjects];
-        NSLog(@"numberOfRowsInSection %ld %ld",section, (long)i);
+        NSLog(@"numberOfRowsInSection %ld %ld",(long)section, (long)i);
         return [[[self.emailFetchedResultsController sections] objectAtIndex:0] numberOfObjects];
     }
     return 0;

@@ -30,5 +30,6 @@ extern NSString* const ABManagerCanReadAfterPermisionAddressBookInfoKey;
 - (void) deletePerson:(CDPerson*) personToRemove;
 - (void) fillPersonsArray;
 - (void) updateAdressBookPerson:(CDPerson*) person withPerson:(CDPerson*) newPers;
++ (ABManager*) sharedBook;
 
 @end

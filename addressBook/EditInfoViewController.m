@@ -61,7 +61,7 @@ NSString* const IndexOfPersonInArrayInfoKey = @"IndexOfPersonInArrayInfoKey";
     self.homeMapView.zoomEnabled = NO;
     self.homeMapView.scrollEnabled = NO;
     
-    self.abManager = [[ABManager alloc] init];
+    self.abManager = [ABManager sharedBook];
     UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(actionDoneButtonPressed:)];
     self.navigationItem.rightBarButtonItem = doneButton;
     UIBarButtonItem* cancelButton =

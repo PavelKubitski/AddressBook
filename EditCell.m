@@ -202,7 +202,7 @@ NSString* const IndexPathInfoKey = @"IndexPathInfoKey";
         textField.keyboardType = UIKeyboardTypeEmailAddress;
         return YES;
     }
-    return nil;
+    return NULL;
 }
 
 

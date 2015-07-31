@@ -18,12 +18,5 @@
 @property (strong, nonatomic) ABManager* abManager;
 @property (strong, nonatomic) CDWriter* cdWriter;
 
-
-
-
-
-
-
-
 @end
 

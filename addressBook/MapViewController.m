@@ -150,7 +150,7 @@
                   }
               }
               if (needToShow) {
-                  [self showAlertWithTitle:@"Address" andMessage:self.fullAddress];
+                  [self showAlertWithTitle:@"Address" andMessage:message];
               }
                 
               }];

@@ -245,7 +245,7 @@ NSString* const OperationInfoKey = @"OperationInfoKey";
     
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            NSLog(@"indexPathForInsert sect = %ld, row = %ld", indexPathForInsert.section, indexPathForInsert.row);
+            NSLog(@"indexPathForInsert sect = %ld, row = %ld", (long)indexPathForInsert.section, (long)indexPathForInsert.row);
             [tableView insertRowsAtIndexPaths:@[indexPathForInsert] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
