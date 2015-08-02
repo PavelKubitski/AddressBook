@@ -31,6 +31,7 @@
     self.cdWriter = [CDWriter sharedWriter];
 
 
+
     self.tableView.navigationController = self.navigationController;
     self.tableView.storyboard = self.storyboard;
     self.tableView.abManager = self.abManager;

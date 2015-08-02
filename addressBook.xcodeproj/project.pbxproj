@@ -117,8 +117,6 @@
 		57A04A711B68F5EE00D1ED04 /* CDPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPerson.h; sourceTree = "<group>"; };
 		57A04A721B68F5EE00D1ED04 /* CDPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPerson.m; sourceTree = "<group>"; };
 		57A04A741B68FF8C00D1ED04 /* noname.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noname.png; path = images/noname.png; sourceTree = "<group>"; };
-		57A1DFED1B6BAC8B000C7CC4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		57A1DFEF1B6BADD5000C7CC4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		57A21BBA1B498607003A4C85 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
 		57A21BBB1B498607003A4C85 /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
 		57A3C8381B59183F00904F3C /* EditContactTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditContactTableView.h; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 		574847351B2F549900162F1D = {
 			isa = PBXGroup;
 			children = (
-				57A1DFEF1B6BADD5000C7CC4 /* AddressBookUI.framework */,
 				574847401B2F549900162F1D /* addressBook */,
 				5748475A1B2F549900162F1D /* addressBookTests */,
 				5748473F1B2F549900162F1D /* Products */,
@@ -214,7 +211,6 @@
 				579D60C91B551D480048F3C0 /* AddressBookModel.xcdatamodeld */,
 				574657A41B32ECE1009BC47E /* Images */,
 				579E3D771B5BDFBB00589C5B /* Categories */,
-				57A1DFED1B6BAC8B000C7CC4 /* AddressBook.framework */,
 				57E0558F1B4BDA78005F4D70 /* MapKit.framework */,
 				5748474E1B2F549900162F1D /* Images.xcassets */,
 				574847501B2F549900162F1D /* LaunchScreen.xib */,
