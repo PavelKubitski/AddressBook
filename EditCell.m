@@ -54,7 +54,7 @@ NSString* const IndexPathInfoKey = @"IndexPathInfoKey";
 
 - (void)touchedTypeLabel:(UIGestureRecognizer *)gesture {
     [self initIndexpathOfSelectCell];
-//    NSLog(@"sect = %ld, row = %ld", self.indexpath.section, self.indexpath.row);
+
     NSDictionary* dc = [[NSDictionary alloc] initWithObjectsAndKeys:self.indexpath, TypeLabelTouchedAtIndexPathInfoKey, nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:TypeLabelTouchedNotification
                                                         object:nil
@@ -239,7 +239,7 @@ NSString* const IndexPathInfoKey = @"IndexPathInfoKey";
 
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-//    NSLog(@"textFieldDidEndEditing");
+
 
 
     [self initIndexpathOfSelectCell];

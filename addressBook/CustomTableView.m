@@ -120,8 +120,6 @@
     
     switch(type) {
         case NSFetchedResultsChangeInsert:{
-//            NSIndexPath* path = [NSIndexPath indexPathForRow:newIndexPath.row+1 inSection:newIndexPath.section];
-//            NSLog(@"sect = %ld, row = %ld", path.section, path.row);
             
             [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
         }
@@ -132,7 +130,7 @@
             break;
             
         case NSFetchedResultsChangeUpdate:{
-//            NSLog(@"sect = %ld, row = %ld", indexPath.section, indexPath.row);
+
             [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
         }
             break;

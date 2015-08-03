@@ -29,8 +29,6 @@
 - (void) reloadDataOfCustomTable {
     self.emailFetchedResultsController = nil;
     self.numberFetchedResultsController = nil;
-//    [[self emailFetchedResultsController] performFetch:nil];
-//    [[self numberFetchedResultsController] performFetch:nil];
     [self reloadData];
 
 }
@@ -80,7 +78,7 @@
 
 - (NSFetchedResultsController *)numberFetchedResultsController
 {
-    //    NSLog(@"");
+
     if (_numberFetchedResultsController != nil) {
         return _numberFetchedResultsController;
     }
@@ -93,14 +91,12 @@
     
     [fetchRequest setEntity:description];
 
+    NSArray* array = [[NSArray alloc] init];
+    
+    [fetchRequest setSortDescriptors:array];
 
-//    NSSortDescriptor* typeDescription =
-//    [[NSSortDescriptor alloc] initWithKey:@"typeLabel" ascending:YES];
     
     
-        NSArray* array = [[NSArray alloc] init];
-//    [fetchRequest setSortDescriptors:@[typeDescription]];
-        [fetchRequest setSortDescriptors:array];
     
     
     
@@ -260,8 +256,7 @@
     
     switch(type) {
         case NSFetchedResultsChangeInsert:{
-//            NSLog(@"newIndexPath sect = %ld, row = %ld", newIndexPath.section, newIndexPath.row);
-//            NSLog(@"indexPathForInsert sect = %ld, row = %ld", indexPathForInsert.section, indexPathForInsert.row);
+
             [tableView insertRowsAtIndexPaths:@[indexPathForInsert] withRowAnimation:UITableViewRowAnimationFade];
             [self configureCell:[tableView cellForRowAtIndexPath:indexPathForInsert] atIndexPath:indexPathForInsert];
         }

@@ -19,7 +19,7 @@
 
 extern NSString* const IndexOfPersonInArrayInfoKey;
 
-//enum viewControllers {VIEWCONTROLLER, DETAILVIEWCONTROLLER};
+
 
 @interface EditInfoViewController : UIViewController<UITextFieldDelegate, UIScrollViewDelegate>
 

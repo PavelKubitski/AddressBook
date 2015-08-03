@@ -7,7 +7,6 @@
 //
 
 #import "ContactsTableView.h"
-//#import "CDObject.h"
 #import "CDPerson.h"
 #import "DetailViewController.h"
 

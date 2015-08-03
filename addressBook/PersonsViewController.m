@@ -112,7 +112,7 @@
 
 - (void) refreshButtonAction:(UIBarButtonItem*) sender {
     
-//    self.abManager = [[ABManager alloc] init];
+
     [self.cdWriter deleteAllObjects];
     self.personsArray = [NSMutableArray arrayWithArray:[self.abManager allPersonsAddPerson:NO]];
     [self.cdWriter addPersonsToCDBase:self.personsArray];

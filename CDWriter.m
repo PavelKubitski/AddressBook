@@ -22,7 +22,7 @@
 {
     self = [super init];
     if (self) {
-//        self.cdManager = [CDManager sharedManager];
+
     }
     return self;
 }

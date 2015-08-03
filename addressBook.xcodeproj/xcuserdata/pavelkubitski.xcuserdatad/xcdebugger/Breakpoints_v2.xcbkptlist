@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ViewContactTableView.m"
-            timestampString = "459857683.629246"
+            timestampString = "460284985.112878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "-tableView:editingStyleForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -191,22 +191,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
-            landmarkName = "-controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "addressBook/CustomTableView.m"
-            timestampString = "459877016.788168"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
             landmarkName = "-controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/EditContactTableView.m"
-            timestampString = "459867220.846632"
+            timestampString = "460284985.112878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
             landmarkName = "-controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/EditContactTableView.m"
-            timestampString = "459867220.846632"
+            timestampString = "460284985.112878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "-controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -378,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ViewContactTableView.m"
-            timestampString = "459532016.555863"
+            timestampString = "460284985.112878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "-emailFetchedResultsController"
             landmarkType = "5">
          </BreakpointContent>
@@ -394,11 +378,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ViewContactTableView.m"
-            timestampString = "459698346.482171"
+            timestampString = "460284985.112878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "-numberFetchedResultsController"
             landmarkType = "5">
          </BreakpointContent>
@@ -410,11 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ViewContactTableView.m"
-            timestampString = "459698346.482171"
+            timestampString = "460284985.112878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "-numberOfSectionsInTableView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -426,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ViewContactTableView.m"
-            timestampString = "459698346.482171"
+            timestampString = "460284985.112878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -442,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ViewContactTableView.m"
-            timestampString = "459698346.482171"
+            timestampString = "460284985.112878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-configureCell:atIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -458,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ViewContactTableView.m"
-            timestampString = "459698346.482171"
+            timestampString = "460284985.112878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -474,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/PersonsViewController.m"
-            timestampString = "460070878.986878"
+            timestampString = "460237172.894616"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "-addressBookDidChanged:"
             landmarkType = "5">
          </BreakpointContent>
@@ -490,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ViewContactTableView.m"
-            timestampString = "459857683.629246"
+            timestampString = "460284985.112878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "-controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -506,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ViewContactTableView.m"
-            timestampString = "459857683.629246"
+            timestampString = "460284985.112878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "-controllerWillChangeContent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -522,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/ViewContactTableView.m"
-            timestampString = "459857683.629246"
+            timestampString = "460284985.112878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "-controller:didChangeSection:atIndex:forChangeType:"
             landmarkType = "5">
          </BreakpointContent>
@@ -570,11 +554,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "addressBook/PersonsViewController.m"
-            timestampString = "460070878.986878"
+            timestampString = "460237172.894616"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "-refreshButtonAction:"
             landmarkType = "5">
          </BreakpointContent>

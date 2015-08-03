@@ -25,7 +25,7 @@
 
 @property (strong, nonatomic) CDPerson* cdPerson;
 
-//@property (assign, nonatomic) NSInteger indexOfPerson;
+
 
 
 

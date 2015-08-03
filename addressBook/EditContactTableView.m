@@ -254,20 +254,16 @@ NSString* const OperationInfoKey = @"OperationInfoKey";
             break;
             
         case NSFetchedResultsChangeUpdate:
-//            NSLog(@"indexPathForUpdate sect = %ld, row = %ld", indexPathForUpdate.section, indexPathForUpdate.row);
-//            NSLog(@"indexPath sect = %ld, row = %ld", indexPath.section, indexPath.row);
 
             [self configureCell:[tableView cellForRowAtIndexPath:indexPathForUpdate] atIndexPath:indexPathForUpdate];
             break;
             
         case NSFetchedResultsChangeMove:
-//            NSLog(@"indexPath sect = %ld, row = %ld", indexPath.section, indexPath.row);
-//            NSLog(@"newIndexPath sect = %ld, row = %ld", newIndexPath.section, newIndexPath.row);
 
             [tableView deleteRowsAtIndexPaths:@[indexPathForDelete] withRowAnimation:UITableViewRowAnimationFade];
             [tableView insertRowsAtIndexPaths:@[indexPathForMove] withRowAnimation:UITableViewRowAnimationFade];
             break;
-            //удалить из нужной строки и вставить в ту же , сохранив индекспас
+
     }
 }
 
