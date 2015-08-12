@@ -2,7 +2,7 @@
 //  CDPerson.h
 //  addressBook
 //
-//  Created by Pavel Kubitski on 29.07.15.
+//  Created by Pavel Kubitski on 09.08.15.
 //  Copyright (c) 2015 Pavel Kubitski. All rights reserved.
 //
 
@@ -14,13 +14,13 @@
 
 @interface CDPerson : CDObject
 
+@property (nonatomic, retain) NSData * avatarImage;
 @property (nonatomic, retain) NSString * companyName;
 @property (nonatomic, retain) NSString * firstName;
 @property (nonatomic, retain) NSString * lastName;
-@property (nonatomic, retain) NSData * avatarImage;
+@property (nonatomic, retain) CDCoordinate *coordinate;
 @property (nonatomic, retain) NSSet *email;
 @property (nonatomic, retain) NSSet *phoneNumber;
-@property (nonatomic, retain) NSSet *coordinate;
 @end
 
 @interface CDPerson (CoreDataGeneratedAccessors)
@@ -34,10 +34,5 @@
 - (void)removePhoneNumberObject:(CDPhoneNumber *)value;
 - (void)addPhoneNumber:(NSSet *)values;
 - (void)removePhoneNumber:(NSSet *)values;
-
-- (void)addCoordinateObject:(CDCoordinate *)value;
-- (void)removeCoordinateObject:(CDCoordinate *)value;
-- (void)addCoordinate:(NSSet *)values;
-- (void)removeCoordinate:(NSSet *)values;
 
 @end

@@ -2,7 +2,7 @@
 //  CDPerson.m
 //  addressBook
 //
-//  Created by Pavel Kubitski on 29.07.15.
+//  Created by Pavel Kubitski on 09.08.15.
 //  Copyright (c) 2015 Pavel Kubitski. All rights reserved.
 //
 
@@ -14,12 +14,12 @@
 
 @implementation CDPerson
 
+@dynamic avatarImage;
 @dynamic companyName;
 @dynamic firstName;
 @dynamic lastName;
-@dynamic avatarImage;
+@dynamic coordinate;
 @dynamic email;
 @dynamic phoneNumber;
-@dynamic coordinate;
 
 @end

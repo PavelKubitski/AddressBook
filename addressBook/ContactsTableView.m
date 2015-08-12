@@ -9,6 +9,7 @@
 #import "ContactsTableView.h"
 #import "CDPerson.h"
 #import "DetailViewController.h"
+#import "PersonCell.h"
 
 @implementation ContactsTableView
 
@@ -58,25 +59,30 @@
 
 #pragma mark - UITableViewDataSource
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(PersonCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 
     CDObject *object = [self.personsFetchedResultsController objectAtIndexPath:indexPath];
     CDPerson *person = (CDPerson*)object;
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", person.firstName, person.lastName];
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", person.firstName, person.lastName];
     cell.detailTextLabel.text = nil;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    UIImage* image = [UIImage imageWithData:person.avatarImage];
+//    cell.imageView.image = [[UIImage imageWithData:person.avatarImage] size].width = ;
+//    cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
+//    cell.imageView.clipsToBounds = YES;
+    cell.avatarImageView.image = [UIImage imageWithData:person.avatarImage];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    static NSString* identifier = @"Cell";
+    static NSString* identifier = @"PersonCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    PersonCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
+        cell = [[PersonCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     }
     
     [self configureCell:cell atIndexPath:indexPath];
@@ -84,6 +90,7 @@
     return cell;
 }
 
+//записать картинки сразу базу
 
 #pragma mark - UITableViewDelegate
 

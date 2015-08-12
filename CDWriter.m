@@ -12,9 +12,22 @@
 #import "LabelAndInfo.h"
 #import "CDEmail.h"
 #import "CDObject.h"
-#include "CDPhoneNumber.h"
-#include "NSString+PhoneNumber.h"
-#include "CDCoordinate.h"
+#import "CDPhoneNumber.h"
+#import "NSString+PhoneNumber.h"
+#import "CDCoordinate.h"
+#import "UIImageView+AFNetworking.h"
+#import "ServerManager.h"
+#import "VKUser.h"
+
+
+static NSInteger friendsInRequest = 100;
+
+@interface CDWriter ()
+
+@property (strong, nonatomic) NSMutableArray* friendsFromVK;
+
+@end
+
 
 @implementation CDWriter
 
@@ -22,7 +35,7 @@
 {
     self = [super init];
     if (self) {
-
+        self.friendsFromVK = [NSMutableArray array];
     }
     return self;
 }
@@ -74,6 +87,7 @@
 
 
 - (void) addPersonsToCDBase:(NSArray*) persons {
+    [self getFriendsFromServer];
     for (Person* pers in persons) {
         CDPerson* person = [NSEntityDescription insertNewObjectForEntityForName:@"CDPerson"
                                                          inManagedObjectContext:[[CDManager sharedManager]managedObjectContext]];
@@ -83,6 +97,7 @@
         if (pers.image) {
             person.avatarImage = UIImageJPEGRepresentation(pers.image, 1);
         } else {
+            
             UIImage *image = [UIImage imageNamed:@"noname.png"];
             person.avatarImage = [NSData dataWithData:UIImagePNGRepresentation(image)];
         }
@@ -109,10 +124,80 @@
         coordinate.latitude = NULL;
         coordinate.longitude = NULL;
         coordinate.person = person;
+        
     }
+    
+
 
     [[CDManager sharedManager] saveContext];
 }
+
+
+
+
+#pragma mark - API
+
+- (void) getFriendsFromServer {
+    
+
+    [[ServerManager sharedManager]
+     getFriendsWithOffset:0
+     count:friendsInRequest
+     onSuccess:^(NSArray *friends) {
+         
+         [self.friendsFromVK addObjectsFromArray:friends];
+         
+         [self addPhotoToUser];
+         
+     }
+     onFailure:^(NSError *error, NSInteger statusCode) {
+         NSLog(@"error = %@, code = %ld", [error localizedDescription], statusCode);
+     }];
+}
+
+- (void) addPhotoToUser {
+    for (VKUser* user in self.friendsFromVK ) {
+        CDPerson* person = [self findPersonWithFirstName:user.firstName andLastName:user.lastName];
+        if (person) {
+            [self addPhoto:user.imageURL toPerson:person];
+        }
+    }
+}
+
+
+- (CDPerson*) findPersonWithFirstName:(NSString*) firstName andLastName:(NSString*) lastName {
+    
+    NSManagedObjectContext* context = [[CDManager sharedManager] managedObjectContext];
+    NSFetchRequest *request = [NSFetchRequest new];
+    
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"CDPerson" inManagedObjectContext:context];
+    [request setEntity:description];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstName == %@ AND lastName == %@", firstName, lastName];
+    [request setPredicate:predicate];
+    NSArray *friends = [context executeFetchRequest:request error:nil];
+    return [friends firstObject];
+}
+
+- (void) addPhoto:(NSURL*) imageURL toPerson:(CDPerson*) person {
+    NSURLRequest* request = [NSURLRequest requestWithURL:imageURL];
+    UIImageView* imageView = [[UIImageView alloc] init];
+
+    [imageView setImageWithURLRequest:request
+                     placeholderImage:nil
+                              success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+
+                                  if (image) {
+                                      person.avatarImage = UIImageJPEGRepresentation(image, 1);
+                                  }
+                                  [[CDManager sharedManager] saveContext];
+                              } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                                  NSLog(@"Failure! error : %@", [error localizedDescription]);
+                              }];
+}
+
+
+
+#pragma mark - deleting
 
 
 - (void) deleteAllObjects {

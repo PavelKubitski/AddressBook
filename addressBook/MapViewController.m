@@ -13,6 +13,7 @@
 #import "CDManager.h"
 #import "CDCoordinate.h"
 #import "NSArray+Converter.h"
+#import "NSString+PhoneNumber.h"
 
 
 @interface MapViewController ()
@@ -73,9 +74,24 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.map removeAnnotations:[self.map annotations]];
-    [self.map addAnnotations:self.annotations];
-    [self.map showHomeOnMap];
+
+    
+    CustomAnnotation* annotation = self.annotation;
+    if (annotation.coordinate.latitude != -1 &&
+        annotation.coordinate.longitude != -1) {
+        [self.map removeAnnotations:[self.map annotations]];
+        [self.map addAnnotation:annotation];
+        [self.map showHomeOnMap];
+    } else {
+        NSString* fullAddress = self.person.coordinate.fullAddress;
+        if (fullAddress) {
+            [self.map geoCodeUsingAddress:fullAddress];
+        }
+    }
+
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,14 +122,14 @@
             for (id annotation in self.map.annotations) {
                 if ([annotation isKindOfClass:[CustomAnnotation class]]) {
                     [self.map removeAnnotation:annotation];
-                    [self.annotations removeLastObject];
-                    CDCoordinate* coordinate = [[self.person coordinate] anyObject];
+                    self.annotation = nil;
+                    CDCoordinate* coordinate = self.person.coordinate;
                     [[[CDManager sharedManager] managedObjectContext] deleteObject:coordinate];
                 }
             }
             
             [self.map addAnnotation:point];
-            [self.annotations addObject:point];
+            self.annotation = point;
             
             [self getAddressFromCoordinates:point.coordinate.latitude andLongitude:point.coordinate.longitude showAlert:NO];
             [self addAnnotationToPerson:point];
@@ -143,7 +159,8 @@
                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
 
                       self.fullAddress = [self makeFormatedAddress:placemark];
-                      message = self.fullAddress;
+                      NSDictionary* address = [self makeNormalAddressFromFormatedString:self.fullAddress];
+                      message = [address description];
                       [self addFullAddressToPerson];
                   } else {
                        message = @"No Placemarks Found";
@@ -163,6 +180,19 @@
     return resultAddress;
 }
 
+- (NSMutableDictionary*) makeNormalAddressFromFormatedString:(NSString*) formatedString {
+    NSArray* components = [formatedString makeArrayOfLocationsAndDescriptions];
+    NSMutableDictionary* address = [NSMutableDictionary dictionary];
+
+    for (NSString* component in components) {
+        NSArray* locationsAndDescriptions = [component componentsSeparatedByString:@"-"];
+
+        [address setObject:[locationsAndDescriptions lastObject] forKey:[locationsAndDescriptions firstObject]];
+
+    }
+    return address;
+}
+
 - (void) addAnnotationToPerson:(CustomAnnotation*) annotation {
     CDCoordinate* coordinate = [NSEntityDescription insertNewObjectForEntityForName:@"CDCoordinate"
                                                              inManagedObjectContext:[[CDManager sharedManager] managedObjectContext]];
@@ -170,7 +200,7 @@
     coordinate.subTitleOfLocation = annotation.subtitle;
     coordinate.latitude = @(annotation.coordinate.latitude);
     coordinate.longitude = @(annotation.coordinate.longitude);
-    [self.person addCoordinateObject:coordinate];
+    self.person.coordinate = coordinate;
 }
 
 -(void) addFullAddressToPerson {
@@ -364,7 +394,7 @@
         
         MKMapPoint center = MKMapPointForCoordinate(location);
         
-        static double delta = 20000;
+        static double delta = 2000;
         
         MKMapRect rect = MKMapRectMake(center.x - delta, center.y - delta, delta * 2, delta * 2);
         
@@ -398,9 +428,9 @@
 
 - (void) initWithPerson:(CDPerson*) person fromVC:(enum viewControllers) vc {
     self.person = person;
-    NSMutableArray* annotations = [[self.person.coordinate allObjects] convertCDCoordArrayToAnnotationArray];
+    CDCoordinate* coordinate = self.person.coordinate ;
 
-    self.annotations = annotations;
+    self.annotation = [[CustomAnnotation alloc] initWithCDCoordinate:coordinate];
     self.vc = vc;
 }
 

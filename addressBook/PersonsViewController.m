@@ -12,9 +12,17 @@
 #import "Section.h"
 #import "ContactsTableView.h"
 #import "CDWriter.h"
+#import "ServerManager.h"
+#import "VKUser.h"
+
+
+
+
 
 
 @interface PersonsViewController ()
+
+@property (assign, nonatomic) BOOL firstTimeAppear;
 
 @end
 
@@ -50,6 +58,8 @@
     [self.navigationItem setLeftBarButtonItem:addButton];
     [self.navigationItem setRightBarButtonItems:@[editButton, refreshButton] animated:YES];
     [self addObservers];
+    
+    self.firstTimeAppear = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -78,7 +88,17 @@
     frame.size.height = self.view.frame.size.height;
     frame.size.width = self.view.frame.size.width;
     self.tableView.frame = frame;
+    
+    
+    if (self.firstTimeAppear) {
+        self.firstTimeAppear = NO;
+        
+        [[ServerManager sharedManager] authorizeUser:^(VKUser *user) {
+        }];
+    }
 }
+
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -112,7 +132,6 @@
 
 - (void) refreshButtonAction:(UIBarButtonItem*) sender {
     
-
     [self.cdWriter deleteAllObjects];
     self.personsArray = [NSMutableArray arrayWithArray:[self.abManager allPersonsAddPerson:NO]];
     [self.cdWriter addPersonsToCDBase:self.personsArray];

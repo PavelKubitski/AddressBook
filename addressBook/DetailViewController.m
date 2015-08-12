@@ -82,17 +82,15 @@ NSInteger offset = 10;
     self.homeMapView.frame = frame;
 
     [self.infoTableView reloadDataOfCustomTable];
-    
-    NSMutableArray* annotations = [[self.cdPerson.coordinate allObjects] convertCDCoordArrayToAnnotationArray];
 
-    CustomAnnotation* annotation = [annotations lastObject];
+    CustomAnnotation* annotation = [[CustomAnnotation alloc] initWithCDCoordinate:self.cdPerson.coordinate];
     if (annotation.coordinate.latitude != -1 &&
         annotation.coordinate.longitude != -1) {
         [self.homeMapView removeAnnotations:[self.homeMapView annotations]];
-        [self.homeMapView addAnnotations:annotations];
+        [self.homeMapView addAnnotation:annotation];
         [self.homeMapView showHomeOnMap];
     } else {
-        NSString* fullAddress = [[self.cdPerson.coordinate anyObject] fullAddress];
+        NSString* fullAddress = self.cdPerson.coordinate.fullAddress;
         if (fullAddress) {
             [self.homeMapView geoCodeUsingAddress:fullAddress];
         }

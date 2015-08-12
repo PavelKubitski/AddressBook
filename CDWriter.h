@@ -19,5 +19,6 @@
 - (void) addPersonsToCDBase:(NSArray*) persons;
 - (NSArray*) allObjects;
 - (void) deleteAllObjects;
+- (void) addPhotoToUser;
 
 @end

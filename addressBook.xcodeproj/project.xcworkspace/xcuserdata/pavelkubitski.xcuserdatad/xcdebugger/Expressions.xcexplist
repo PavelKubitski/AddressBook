@@ -3,21 +3,44 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[MapViewController initWithPerson:fromVC:]:MapViewController.m">
+         contextName = "-[ABManager updateAdressBookPerson:withPerson:]:ABManager.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.map.annotations">
+               value = "person.lastName">
+            </PersistentString>
+            <PersistentString
+               value = "newPers.firstName">
+            </PersistentString>
+            <PersistentString
+               value = "pers">
+            </PersistentString>
+            <PersistentString
+               value = "coordinate.fullAddress">
+            </PersistentString>
+            <PersistentString
+               value = "newPers.coordinate">
+            </PersistentString>
+            <PersistentString
+               value = "person.firstName">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[CustomMapView geoCodeUsingAddress:]:CustomMapView.m">
+         contextName = "-[EditInfoViewController initWithPerson:fromVC:]:EditInfoViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[DetailViewController adjastHieghtOfTableView]:DetailViewController.m">
          <PersistentStrings>
             <PersistentString
                value = "self.homeMapView.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewController handleLongPress:]:MapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.map.annotations">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -33,32 +56,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[MapViewController handleLongPress:]:MapViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.map.annotations">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[ViewController tableView:didSelectRowAtIndexPath:]:ViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[ABManager fillPersonsArray]:ABManager.m">
          <PersistentStrings>
             <PersistentString
+               value = "person.address">
+            </PersistentString>
+            <PersistentString
                value = "person.birthdayDate">
             </PersistentString>
             <PersistentString
                value = "fnameProperty">
             </PersistentString>
-            <PersistentString
-               value = "person.address">
-            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[DetailViewController editButtonAction:]:DetailViewController.m">
+         contextName = "-[MapViewController viewWillAppear:]:MapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.map.annotations">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "-[EditCell textFieldDidEndEditing:]:EditCell.m">
@@ -77,14 +97,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[EditContactTableView reventChanges:]:EditContactTableView.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.fetchedResultsController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "addressBookChanged:ABManager.m">
          <PersistentStrings>
             <PersistentString
@@ -96,12 +108,15 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[MapViewController viewWillAppear:]:MapViewController.m">
+         contextName = "-[EditContactTableView reventChanges:]:EditContactTableView.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.map.annotations">
+               value = "self.fetchedResultsController">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetailViewController editButtonAction:]:DetailViewController.m">
       </ContextState>
       <ContextState
          contextName = "__60-[MapViewController getAddressFromCoordinates:andLongitude:]_block_invoke:MapViewController.m">
@@ -138,7 +153,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[EditInfoViewController actionCancelButtonPressed:]:EditInfoViewController.m">
+         contextName = "__37-[CustomMapView geoCodeUsingAddress:]_block_invoke:CustomMapView.m">
       </ContextState>
       <ContextState
          contextName = "-[EditInfoViewController viewDidLoad]:EditInfoViewController.m">
@@ -149,7 +164,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "__37-[CustomMapView geoCodeUsingAddress:]_block_invoke:CustomMapView.m">
+         contextName = "-[EditInfoViewController actionCancelButtonPressed:]:EditInfoViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[EditContactTableView changedCharactare:]:EditContactTableView.m">
@@ -169,13 +184,13 @@
                value = "cell.typeLabel.text ">
             </PersistentString>
             <PersistentString
-               value = "cdPhoneNumber.typeLabel">
+               value = "cdPhoneNumber.number">
             </PersistentString>
             <PersistentString
                value = "cell.infoTextField.text">
             </PersistentString>
             <PersistentString
-               value = "cdPhoneNumber.number">
+               value = "cdPhoneNumber.typeLabel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -194,19 +209,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[EditContactTableView reventChangesCDPerson:withPerson:]:EditContactTableView.m">
+         contextName = "-[DetailViewController mapViewTouched:]:DetailViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "cdPers.email">
+               value = "self.cdPerson.coordinate">
             </PersistentString>
             <PersistentString
-               value = "cdPers.phoneNumber">
-            </PersistentString>
-            <PersistentString
-               value = "cdPers.firstName">
-            </PersistentString>
-            <PersistentString
-               value = "cdPerson.phoneNumber">
+               value = "c.nameOfLocation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -222,13 +231,19 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[DetailViewController mapViewTouched:]:DetailViewController.m">
+         contextName = "-[EditContactTableView reventChangesCDPerson:withPerson:]:EditContactTableView.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.cdPerson.coordinate">
+               value = "cdPers.email">
             </PersistentString>
             <PersistentString
-               value = "c.nameOfLocation">
+               value = "cdPers.phoneNumber">
+            </PersistentString>
+            <PersistentString
+               value = "cdPers.firstName">
+            </PersistentString>
+            <PersistentString
+               value = "cdPerson.phoneNumber">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -300,36 +315,35 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "__32-[CDWriter getFriendsFromServer]_block_invoke:CDWriter.m">
+      </ContextState>
+      <ContextState
          contextName = "-[EditInfoViewController typeVCDismissed:]:EditInfoViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[EditCell initIndexpathOfSelectCell]:EditCell.m">
       </ContextState>
       <ContextState
-         contextName = "-[EditContactTableView awakeFromNib]:EditContactTableView.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[ABManager updateAdressBookPerson:withPerson:]:ABManager.m">
+         contextName = "__30-[CDWriter addPhoto:toPerson:]_block_invoke:CDWriter.m">
          <PersistentStrings>
             <PersistentString
-               value = "person.lastName">
-            </PersistentString>
-            <PersistentString
-               value = "person.firstName">
-            </PersistentString>
-            <PersistentString
-               value = "pers">
-            </PersistentString>
-            <PersistentString
-               value = "newPers.coordinate">
-            </PersistentString>
-            <PersistentString
-               value = "newPers.firstName">
+               value = "person.avatarImage">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[EditInfoViewController initWithPerson:fromVC:]:EditInfoViewController.m">
+         contextName = "-[EditContactTableView awakeFromNib]:EditContactTableView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewController initWithPerson:fromVC:]:MapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.map.annotations">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CustomMapView geoCodeUsingAddress:]:CustomMapView.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

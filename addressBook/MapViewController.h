@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "CustomMapView.h"
+@class CustomAnnotation;
 @class CDPerson;
 
 enum viewControllers {PERSONSVIEWCONTROLLER, DETAILVIEWCONTROLLER, EDITVIEWCONTROLLER};
@@ -16,7 +17,7 @@ enum viewControllers {PERSONSVIEWCONTROLLER, DETAILVIEWCONTROLLER, EDITVIEWCONTR
 @interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet CustomMapView *map;
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) NSMutableArray *annotations;
+@property (strong, nonatomic) CustomAnnotation *annotation;
 @property (assign, nonatomic) enum viewControllers vc;
 @property (strong, nonatomic) CDPerson* person;
 @property (strong, nonatomic) NSString* fullAddress;

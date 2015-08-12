@@ -19,7 +19,7 @@
         <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="coordinate" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDCoordinate" inverseName="person" inverseEntity="CDCoordinate" syncable="YES"/>
+        <relationship name="coordinate" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CDCoordinate" inverseName="person" inverseEntity="CDCoordinate" syncable="YES"/>
         <relationship name="email" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDEmail" inverseName="person" inverseEntity="CDEmail" syncable="YES"/>
         <relationship name="phoneNumber" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDPhoneNumber" inverseName="person" inverseEntity="CDPhoneNumber" syncable="YES"/>
     </entity>
@@ -29,10 +29,10 @@
         <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPerson" inverseName="phoneNumber" inverseEntity="CDPerson" syncable="YES"/>
     </entity>
     <elements>
+        <element name="CDCoordinate" positionX="-3314" positionY="1700" width="128" height="133"/>
         <element name="CDEmail" positionX="-3161" positionY="1485" width="128" height="88"/>
         <element name="CDObject" positionX="-3267" positionY="1359" width="128" height="43"/>
         <element name="CDPerson" positionX="-3411" positionY="1476" width="128" height="148"/>
         <element name="CDPhoneNumber" positionX="-3584" positionY="1458" width="128" height="88"/>
-        <element name="CDCoordinate" positionX="-3314" positionY="1700" width="128" height="133"/>
     </elements>
 </model>

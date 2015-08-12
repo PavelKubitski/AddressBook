@@ -18,6 +18,8 @@
 #import "CDManager.h"
 #import "UIViewController+LastViewController.h"
 #import "NSArray+Converter.h"
+#import "CDCoordinate.h"
+#import "CDWriter.h"
 
 NSInteger kOffset = 70;
 
@@ -80,10 +82,24 @@ NSString* const IndexOfPersonInArrayInfoKey = @"IndexOfPersonInArrayInfoKey";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self viewDidAppear:animated];
-    NSMutableArray* annotations = [[self.personWithChanges.coordinate allObjects] convertCDCoordArrayToAnnotationArray];
-    [self.homeMapView removeAnnotations:[self.homeMapView annotations]];
-    [self.homeMapView addAnnotations:annotations];
 
+
+
+    CustomAnnotation* annotation = [[CustomAnnotation alloc] initWithCDCoordinate:self.personWithChanges.coordinate];
+    if (annotation.coordinate.latitude != -1 &&
+        annotation.coordinate.longitude != -1) {
+        [self.homeMapView removeAnnotations:[self.homeMapView annotations]];
+        [self.homeMapView addAnnotation:annotation];
+        [self.homeMapView showHomeOnMap];
+    } else {
+        NSString* fullAddress = self.personWithChanges.coordinate.fullAddress;
+        if (fullAddress) {
+            [self.homeMapView geoCodeUsingAddress:fullAddress];
+        }
+    }
+    
+    
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(mapViewTouched:)
                                                  name:MapViewTouchedNotification
@@ -167,7 +183,7 @@ NSString* const IndexOfPersonInArrayInfoKey = @"IndexOfPersonInArrayInfoKey";
             [self.personWithChanges.lastName isEqualToString:@""]) {
             self.personWithChanges.firstName = @"No name";
         }
-        
+        [[CDWriter sharedWriter] addPhotoToUser];
         [self.abManager updateAdressBookPerson:nil withPerson:self.personWithChanges];
 
     } else if (self.vc == DETAILVIEWCONTROLLER) {

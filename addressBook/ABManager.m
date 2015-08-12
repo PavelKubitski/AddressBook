@@ -319,23 +319,25 @@ NSString* const ABManagerCanReadAfterPermisionAddressBookInfoKey = @"ABManagerCa
             ABMutableMultiValueRef multiEmails = ABMultiValueCreateMutable(kABMultiStringPropertyType);
             ABMutableMultiValueRef address = ABMultiValueCreateMutable(kABDictionaryPropertyType);
             
-            if ([newPers.coordinate count] != 0) {
-                NSArray* coordinates = [newPers.coordinate allObjects];
-                for (int i = 0; i < [newPers.coordinate count]; i++) {
-                    CDCoordinate* coordinate = [coordinates objectAtIndex:i];
-                    NSArray* components = [coordinate.fullAddress makeArrayOfLocationsAndDescriptions];
-                    int j = 0;
-                    for (NSString* component in components) {
-                        NSArray* lad = [component componentsSeparatedByString:@"-"];
-                        values[j] = (__bridge CFTypeRef)[lad lastObject];
-                        j++;
-                    }
-                }
-                CFDictionaryRef dict = CFDictionaryCreate(NULL, (const void **)keys, (const void **)values, 4, &kCFCopyStringDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
-                ABMultiValueAddValueAndLabel(address, dict, kABHomeLabel, &identifier);
-                CFRelease(dict);
-            }
 
+
+            if (newPers.coordinate) {
+
+
+                NSArray* components = [newPers.coordinate.fullAddress makeArrayOfLocationsAndDescriptions];
+                int j = 0;
+                for (NSString* component in components) {
+                    NSArray* locationsAndDescriptions = [component componentsSeparatedByString:@"-"];
+                    values[j] = (__bridge CFStringRef)[locationsAndDescriptions lastObject];
+                    j++;
+                }
+                if (![newPers.coordinate.fullAddress isEqualToString:@""]) {
+                    CFDictionaryRef dict = CFDictionaryCreate(NULL, (const void **)keys, (const void **)values, 4, &kCFCopyStringDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+                    ABMultiValueAddValueAndLabel(address, dict, kABHomeLabel, &identifier);
+                    CFRelease(dict);
+                }
+
+            }
             
             NSArray* numbers = [newPers.phoneNumber allObjects];
             for (int i = 0; i < [newPers.phoneNumber count]; i++) {
